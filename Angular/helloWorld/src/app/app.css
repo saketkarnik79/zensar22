@@ -1,0 +1,19 @@
+p {
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace
+}
+
+button {
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace
+}
+
+.inc{
+    background-color: green;
+    color: white;
+}
+
+.dec{
+    background-color: red;
+    color: white;
+}
