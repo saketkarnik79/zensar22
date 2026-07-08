@@ -1,0 +1,8 @@
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'Admin'">Admin Panel!</div>
+  <div *ngSwitchCase="'User'">User Panel!</div>
+  <div *ngSwitchCase="'Manager'">Manager Panel!</div>
+  <div *ngSwitchCase="'Employee'">Employee Panel!</div>
+  <div *ngSwitchDefault>Guest Panel!</div>
+
+</div>

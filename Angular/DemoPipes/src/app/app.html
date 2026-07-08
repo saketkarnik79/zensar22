@@ -1,0 +1,57 @@
+<h1>{{title()}}</h1>
+<hr/>
+<h2>String Pipes Demos</h2>
+<h4>Original name: {{name}}</h4>
+<h4>name With Uppercase Pipe : {{name | uppercase}}</h4>
+<h4>name With Lowercase Pipe : {{name | lowercase}}</h4>
+<h4>name With Titlecase Pipe : {{name | titlecase}}</h4>
+<hr/>
+<h2>Date Pipes Demos</h2>
+<h4>Original Date: {{today}}</h4>
+<h4>Date With Date Pipe : {{today | date}}</h4>
+<h4>Date With Date Pipe(short) : {{today | date:'short'}}</h4>
+<h4>Date With Date Pipe(medium) : {{today | date:'medium'}}</h4>
+<h4>Date With Date Pipe(long) : {{today | date:'long'}}</h4>
+<h4>Date With Date Pipe(full) : {{today | date:'full'}}</h4>
+<h4>Date With Date Pipe('dd/MM/yyyy') : {{today | date:'dd/MM/yyyy'}}</h4>
+<h4>Date With Date Pipe('dd/MM/yyyy HH:mm:ss') : {{today | date:'dd/MM/yyyy HH:mm:ss'}}</h4>
+<hr/>
+<h2>Currency Pipe</h2>
+<h4>Original price: {{price}}</h4>
+<h4>Price With Currency Pipe : {{price | currency}}</h4>
+<h4>Price With Currency Pipe(USD) : {{price | currency:'USD'}}</h4>
+<h4>Price With Currency Pipe(EUR) : {{price | currency:'EUR'}}</h4>
+<h4>Price With Currency Pipe(EUR) : {{price | currency:'INR'}}</h4>
+<hr/>
+<h2>Number Pipes</h2>
+<h4>Original price: {{price}}</h4>
+<h4>Price With Number Pipe : {{price | number}}</h4>
+<h4>Price With Number Pipe(1.2-2) : {{price | number:'1.3-3'}}</h4>
+<h4>Price With Number Pipe(1.0-0) : {{price | number:'1.0-0'}}</h4>
+<hr/>
+<h2>Percent Pipe</h2>
+<h4>Original completion: {{completion}}</h4>
+<h4>Completion With Percent Pipe : {{completion | percent}}</h4>
+<h4>Completion With Percent Pipe : {{completion | percent:'1.2-2'}}</h4>
+<hr>
+<h4>Slice Pipe for string : {{name | slice:0:7}}</h4>
+<h4>Slice Pipe for array : {{cities | slice:0:2}}</h4>
+<ul>
+  <li *ngFor="let city of cities | slice:0:3">{{city}}</li>
+</ul>
+<hr/>
+<h2>Json Pipe</h2>
+<h4>Employee Object : {{employee | json}}</h4>
+<hr/>
+<h2>KeyValue Pipe</h2>
+<ul>
+  <li *ngFor="let item of employee | keyvalue">{{item.key}} : {{item.value}}</li>
+</ul>
+<hr/>
+<h2>Chaining Pipes</h2>
+<h4>Chained Pipes : {{name | uppercase | slice:0:7}}</h4>
+<hr/>
+<h2>Custom Pipe</h2>
+<h4>Reversed Name : {{name | reversePipe}}</h4>
+<hr/>
+<router-outlet />

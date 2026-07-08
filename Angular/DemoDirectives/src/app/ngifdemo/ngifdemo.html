@@ -1,0 +1,17 @@
+<button (click)="toggleLogin()">Toggle Login</button>
+
+<div *ngIf="isLoggedIn">
+    Welcome User!
+</div>
+
+<div *ngIf="!isLoggedIn">
+    Please Login
+</div>
+
+<hr/>
+<div *ngIf="isAdmin; else normalUser">
+    Admin Dashboard
+</div>
+<ng-template #normalUser>
+    User Dashboard
+</ng-template>
