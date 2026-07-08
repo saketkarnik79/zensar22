@@ -1,0 +1,27 @@
+<h2>
+    {{ title() }}
+</h2>
+<hr/>
+<img [src]="logoUrl" [alt]="title()" style="width: 100px; height: 50px;" />
+<hr/>
+<p>
+    <strong>Name:</strong> {{ name }}
+</p>
+<hr/>
+<h2>{{ counter }}</h2>
+<button (click)="incrementCounter()">Increment Counter</button>
+<hr/>
+<button (click)="showUser('John Doe')">John</button>
+<button (click)="showUser('Jane Smith')">Jane</button>
+<hr/>
+<button (click)="showCoordinates($event)">
+    Click Me!
+</button>
+<hr/>
+<input type="text" (keyup)="updateText($event)" placeholder="Enter text..." />
+<p>{{ text }}</p>
+<hr/>
+<h2>Two Way Binding</h2>
+<input type="text" [(ngModel)]="userName" placeholder="Enter userName..." />
+<p>{{ userName }}</p>
+<hr/>
