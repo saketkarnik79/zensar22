@@ -1,0 +1,26 @@
+<!-- <input type="text" [(ngModel)]="studentName" placeholder="Enter student name" /> -->
+<!-- <input type="text" [ngModel]="studentName" (ngModelChange)="studentName = $event" placeholder="Enter student name"> -->
+<!-- <p>Student Name: {{ studentName }}</p> -->
+
+<form #studentForm="ngForm" (ngSubmit)="registerStudent()">
+    <div>
+        <label for="id">Student Id:</label>
+        <input type="number" name="id" [(ngModel)]="student.id" placeholder="Enter student id" />
+    </div>
+    <div>
+        <label for="name">Student Name:</label>
+        <input type="text" name="name" [(ngModel)]="student.name" 
+            placeholder="Enter student name" required #name="ngModel" />
+        <div *ngIf="name.invalid && name.touched">
+            <span class="error">Student name is required.</span>
+        </div>
+    </div>
+    <div>
+        <label for="course">Course:</label>
+        <input type="text" name="course" [(ngModel)]="student.course" placeholder="Enter course" />
+    </div>
+    <div>&nbsp;</div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
