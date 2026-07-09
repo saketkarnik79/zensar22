@@ -1,4 +1,9 @@
 <h1>{{ title() }}</h1>
 <hr/>
-<app-customer-list></app-customer-list>
+<app-employee-card
+  /* [employeeName]="employee.name"
+  [department]="employee.department"
+  [salary]="employee.salary"> */
+  [employee]="employee">
+</app-employee-card>
 <router-outlet />

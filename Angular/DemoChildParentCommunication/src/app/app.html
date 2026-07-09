@@ -1,0 +1,11 @@
+<h1>{{ title() }}</h1>
+<hr />
+<app-employee-component (employeeSelected)="receiveEmployee($event)"></app-employee-component>
+<!-- <h2>Selected Employee: {{ selectedEmployee }}</h2> -->
+<div *ngIf="selectedEmployee">
+    <h2>Selected Employee</h2>
+    <p>Name: {{ selectedEmployee?.name }}</p>
+    <p>Department: {{ selectedEmployee?.department }}</p>
+    <p>Salary: {{ selectedEmployee?.salary }}</p>
+</div>
+<router-outlet />
