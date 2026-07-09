@@ -1,0 +1,8 @@
+<h2>Parent Component</h2>
+<p>Student Name: {{ studentName }}</p>
+<button (click)="changeStudentName()">Change Student Name</button>
+<button (click)="destroyComponent()">Destroy Child Component</button>
+<hr/>
+<app-child *ngIf="showChild" [studentName]="studentName">
+    <p>This content will be passed to the Child component from the Parent Component</p>
+</app-child>
