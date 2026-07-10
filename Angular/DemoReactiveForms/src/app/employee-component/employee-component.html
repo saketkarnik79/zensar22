@@ -1,0 +1,77 @@
+<form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+    <h1>Employee Registration Form</h1>
+    <!-- User Name -->
+    <div>
+        <label for="userName">User Name:</label>
+        <input type="text" formControlName="userName" placeholder="Enter user name" />
+        <span class="error" 
+            *ngIf="employeeForm.get('userName')?.errors?.['required'] && employeeForm.get('userName')?.touched">
+            UserName is required.
+        </span>
+        <span class="error" 
+            *ngIf="employeeForm.get('userName')?.errors?.['minlength'] && employeeForm.get('userName')?.touched">
+            UserName must be of Minimum 4 characters.
+        </span>
+        <span class="error" 
+            *ngIf="employeeForm.get('userName')?.errors?.['noSpace'] && employeeForm.get('userName')?.touched">
+            UserName must not contain any space.
+        </span>
+    </div>
+    <!-- Email -->
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" placeholder="Enter email" />
+        <span class="error" 
+            *ngIf="employeeForm.get('email')?.errors?.['required'] && employeeForm.get('email')?.touched">
+            Email is required.
+        </span>
+        <span class="error" 
+            *ngIf="employeeForm.get('email')?.errors?.['email'] && employeeForm.get('email')?.touched">
+            Invalid email format.
+        </span>
+    </div>
+    <!-- Age -->
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" formControlName="age" placeholder="Enter age" />
+        <span class="error" 
+            *ngIf="employeeForm.get('age')?.errors?.['min'] && employeeForm.get('age')?.touched">
+            Age must be >= 18.
+        </span>
+        <span class="error" 
+            *ngIf="employeeForm.get('age')?.errors?.['max'] && employeeForm.get('age')?.touched">
+            Age must be <= 60.
+        </span>
+    </div>
+    <!-- Password Group -->
+    <div formGroupName="passwordGroup">
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" formControlName="password" placeholder="Enter password" />
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" formControlName="confirmPassword" placeholder="Confirm password" />
+        </div>
+    </div>
+    <!-- Address Group -->
+    <div formGroupName="address">
+        <h3>Address</h3>
+            <input type="text" formControlName="city" placeholder="Enter city" />
+            <input type="text" formControlName="state" placeholder="Enter state" />
+            <input type="text" formControlName="zipCode" placeholder="Enter zip code" />
+    </div>
+    <!-- Skills -->
+    <div formArrayName="skills">
+        <h3>Skills</h3>
+        <div *ngFor="let skill of skills.controls; let i = index">
+            <input type="text" [formControlName]="i" placeholder="Enter skill" />
+            <button type="button" (click)="removeSkill(i)">Remove Skill</button>
+        </div>
+        <button type="button" (click)="addSkill()">Add Skill</button>
+    </div>
+    <div>
+        <button type= "submit">Submit</button>
+        <button type= "button" (click)="resetForm()">Reset Form</button>
+    </div>
+</form>
