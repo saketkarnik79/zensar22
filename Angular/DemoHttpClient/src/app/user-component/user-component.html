@@ -1,0 +1,23 @@
+<h2>{{title()}}</h2>
+<br/>
+<!-- <pre>{{ this.users | json }}</pre> -->
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+    <br/>
+    <button type="button" (click)="saveUser()">
+        Create User
+    </button>
+</table>
