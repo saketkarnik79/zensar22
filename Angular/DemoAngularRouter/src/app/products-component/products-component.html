@@ -1,0 +1,9 @@
+<p>products-component works!</p>
+
+<ul>
+    <li *ngFor="let p of products;" id={{p.id}}>
+        <a routerLink="/products/{{p.id}}">
+            {{p.name}}
+        </a>
+    </li>
+</ul>
